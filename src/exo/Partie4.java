@@ -4,9 +4,12 @@ import models.Trip;
 
 import java.util.List;
 import java.util.Map;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class Partie4 {
+
+    private static final Predicate<Trip> isPremiumTrip = trip -> trip.price() > 30 && trip.rating() > 4;
 
     public double totalRevenueSequential(List<Trip> trips) {
         return trips.stream()
@@ -30,7 +33,7 @@ public class Partie4 {
 
     public List<Trip> premiumTripsParallel(List<Trip> trips) {
         return trips.parallelStream()
-                .filter(trip -> trip.price() > 30 && trip.rating() > 4)
+                .filter(isPremiumTrip)
                 .collect(Collectors.toList());
     }
 }
