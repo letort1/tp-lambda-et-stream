@@ -8,12 +8,12 @@ import models.Trip;
 import java.util.List;
 
 void main() {
-    // Generate a small list to test if it works well
+    
     List<Trip> smallTripsList = TripFactory.generateTrips(10);
     System.out.println("All generated trips");
     smallTripsList.forEach(System.out::println);
 
-    System.out.println("\n\n==== PARTIE 1 ====");
+    System.out.println("\nPARTIE 1");
     Partie1 partie1 = new Partie1();
     System.out.println("\nLong and Expensive Trips");
     partie1.longAndExpensiveTrips(smallTripsList).forEach(System.out::println);
@@ -22,7 +22,7 @@ void main() {
     System.out.println("\nRecent Trips");
     partie1.recentTrips(smallTripsList).forEach(System.out::println);
 
-    System.out.println("\n\n==== PARTIE 2 ====");
+    System.out.println("\n\nPARTIE 2");
     Partie2 partie2 = new Partie2();
     System.out.println("\nCount by City");
     System.out.println(partie2.countByCity(smallTripsList));
@@ -31,14 +31,14 @@ void main() {
     System.out.println("\nAverage Duration by City");
     System.out.println(partie2.avgDurationByCity(smallTripsList));
 
-    System.out.println("\n\n==== PARTIE 3 ====");
+    System.out.println("\n\nPARTIE 3");
     Partie3 partie3 = new Partie3();
     System.out.println("\nTop 10 Expensive Trips (up to 10)");
     partie3.top10ExpensiveTrips(smallTripsList).forEach(System.out::println);
     System.out.println("\nBest Trip");
     partie3.bestTrip(smallTripsList).ifPresent(System.out::println);
 
-    System.out.println("\n\n==== PARTIE 4 ====");
+    System.out.println("\n\nPARTIE 4");
     Partie4 partie4 = new Partie4();
     System.out.println("\nTotal Revenue (Sequential)");
     System.out.println(partie4.totalRevenueSequential(smallTripsList));
